@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Lora:ital,wght@0,400;1,400&family=Share+Tech+Mono&display=swap');
 
 * {
     margin: 0;
@@ -14,7 +15,7 @@ body {
     color: white;
     display: flex;
     font-family: 'Nunito', monospace;
-   min-width: 80rem;
+    min-width: 80rem;
     max-width: 70vw;
     height: 300px;
     position: fixed;
@@ -71,6 +72,11 @@ body {
 
 #logoBody {
     width: 175px;
+    background: #45454528;
+    background-image: url(image.png);
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: lighten;
     opacity: 0.35;
     font-size: 22px;
     height: 175px;
@@ -80,20 +86,12 @@ body {
     color: #454545;
     line-height: 35px;
     border-radius: 20px;
-    display: flex
-;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-}
-#logoBody>img {
-    height: 175px;
 }
 
 #drawerBox {
     color: white;
     display: flex;
-    font-family: 'Nunito';
+    font-family: 'Nunito', monospace;
     min-width: 30rem;
     max-width: 45vw;
     height: 125px;
