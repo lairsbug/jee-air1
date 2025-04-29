@@ -14,7 +14,7 @@ body {
     color: white;
     display: flex;
     font-family: 'Nunito', monospace;
-    min-width: 60rem;
+   min-width: 80rem;
     max-width: 70vw;
     height: 300px;
     position: fixed;
