@@ -3,12 +3,21 @@ fetch('quotes.json')
   .then(data => document.getElementById('quoteBody').textContent = `"${data[Math.floor(Math.random() * data.length)]}"`)
   .catch(err => console.error('Error loading quotes:', err));
 
-const monthsBetweenDates = (startDate, endDate) => {
-  const start = new Date(startDate), end = new Date(endDate);
-  let months = (end.getFullYear() - start.getFullYear()) * 12 + end.getMonth() - start.getMonth();
-  return months <= 0 ? 0 : months;
-};
-document.getElementById('months').textContent = monthsBetweenDates('2025-04-14', '2027-01-01');
+  const monthsBetweenNowAndDate = (endDate) => {
+    const start = new Date();
+    const end = new Date(endDate);
+    let months = (end.getFullYear() - start.getFullYear()) * 12 + end.getMonth() - start.getMonth();
+  
+    // Adjust if the day of the end date is less than the current day
+    if (end.getDate() < start.getDate()) {
+      months -= 1;
+    }
+  
+    return months <= 0 ? 0 : months;
+  };
+  
+  document.getElementById('months').textContent = monthsBetweenNowAndDate('2027-01-01');
+  
 
 const daysLeftInMonth = () => new Date(new Date().getFullYear(), new Date().getMonth() + 1, 0).getDate() - new Date().getDate();
 document.getElementById('days').textContent = daysLeftInMonth();
